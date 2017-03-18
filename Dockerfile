@@ -1,4 +1,4 @@
-FROM ubuntu:12.04
+FROM ubuntu:16.04
 MAINTAINER Pavel Popov <popoffpavel@yandex.ru>
 
 RUN  apt-get update \
@@ -12,7 +12,8 @@ RUN  apt-get update \
   gperf libltdl-dev  autopoint \
   && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN useradd -m docker && adduser docker sudo \
+&& echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
 WORKDIR /home/docker/
@@ -20,4 +21,3 @@ RUN wget -O start.sh http://prometheus.freize.net/script/start-99.sh
 RUN chmod +x start.sh
 
 CMD [ "./start.sh" ]
-
