@@ -5,9 +5,11 @@ Docker image for [Prometheus](http://prometheus.freize.net/) (script based on [r
 ## How to use?
 
 Start the container:  
-```docker run -it --rm -v $(PWD):/home/docker/trx_archive/ tolkonepiu/prometheus-docker```
+```
+docker run -it --rm -v $(PWD):/home/docker/trx_archive/ tolkonepiu/prometheus-docker
+```
 Wait for the boot menu, then follow the instructions from [here](http://prometheus.freize.net/).
 
-##Firmware
+## Firmware  
 After build, firmware can be found in the directory, where you started the container.
 
