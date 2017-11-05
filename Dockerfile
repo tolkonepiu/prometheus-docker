@@ -9,7 +9,7 @@ RUN  apt-get update \
   libmpfr-dev libmpc-dev git zip \
   sshpass mc curl python expect bc telnet \
   openssh-client tftpd-hpa libid3tag0-dev \
-  gperf libltdl-dev  autopoint \
+  gperf libltdl-dev  autopoint cpio module-init-tools \
   && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m docker && adduser docker sudo \
