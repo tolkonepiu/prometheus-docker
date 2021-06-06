@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:focal
 MAINTAINER Pavel Popov <popoffpavel@yandex.ru>
 
 RUN  apt-get update \
